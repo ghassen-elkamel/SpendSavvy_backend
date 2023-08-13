@@ -24,7 +24,7 @@ async hashPassword(password: string) :Promise<string> {
 }
 async decodePassword(user: User, password: string) :Promise<boolean> {
     let match=false;
-    console.log("///////////////////////////////////////////");
+ 
     
     console.log(user)
     match=user&& (await bcrypt.compare(password, user.password));
