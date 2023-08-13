@@ -38,4 +38,12 @@ const refreshToken :string=this.jwtService.sign({
     expiresIn:REFRESH_TOKEN_TIMEOUT,
 });
 return { accessToken, refreshToken };
-}}
+}
+
+async createUser(mail: string, password: string, userName: string, avatar: string) {
+    const user = new this.userModel({ mail, password, userName, avatar });
+    return user.save();
+
+}
+
+}
