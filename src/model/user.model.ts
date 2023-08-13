@@ -12,13 +12,6 @@ export class User {
     auto: true,
   })
   _id: string;
-    @Prop({
-    type: String,
-    required: true,
-  
-    trim: true
-  })
-  identity: string;
   @Prop({
     type: String,
     required: true,

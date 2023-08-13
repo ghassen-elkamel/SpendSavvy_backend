@@ -8,8 +8,8 @@ export class RefreshStrategy extends PassportStrategy(Strategy, 'refresh') {
   constructor(private readonly authService: AuthService) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-      secretOrKey: process.env.SECRET_KEY,
-    });
+      secretOrKey: process.env.JWT_SECRET_KEY,
+    })
   }
   async validate(payload) {
     const user = await this.authService.getUserByMail(payload.mail);

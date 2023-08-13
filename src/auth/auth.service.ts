@@ -13,14 +13,20 @@ export class AuthService {
 
     ) {}
 
-async getUserByMail(mail: string) {
-    return this.userModel.findOne({ mail });
-}
+    async getUserByMail(mail: string) {
+        return this.userModel.findOne(
+          { mail },
+          { id: 1, password: 1, userName:1,mail:1,avatar:1},
+        );
+      }
 async hashPassword(password: string) :Promise<string> {
    return bcrypt.hash(password, 10);
 }
 async decodePassword(user: User, password: string) :Promise<boolean> {
     let match=false;
+    console.log("///////////////////////////////////////////");
+    
+    console.log(user)
     match=user&& (await bcrypt.compare(password, user.password));
     return match;
 }

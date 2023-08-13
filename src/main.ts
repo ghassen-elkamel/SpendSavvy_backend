@@ -41,13 +41,13 @@ async function bootstrap() {
   app.use(helmet());
   app.enableCors();
   app.useGlobalPipes(new ValidationPipe())
-  // app.use(
-  //   rateLimit({
-  //     windowMs: 1 * 1000,
-  //     max: 1000,
-  //     message: 'too many request! slow down',
-  //   }),
-  // );
+  app.use(
+    rateLimit({
+      windowMs: 1 * 1000,
+      max: 1000,
+      message: 'too many request! slow down',
+    }),
+  );
 
   /******/
   await app.listen(PORT, () => {
