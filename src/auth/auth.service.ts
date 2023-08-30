@@ -4,15 +4,12 @@ import * as bcrypt from 'bcrypt'
 import { Model } from 'mongoose';
 import { ACCESS_TOKEN_TIMEOUT, REFRESH_TOKEN_TIMEOUT, USER_PROVIDER } from 'src/config';
 import { User } from 'src/model/user.model';
-
 @Injectable()
 export class AuthService {
     constructor(
         @Inject(USER_PROVIDER) private readonly userModel: Model<User>,
         private readonly jwtService: JwtService,
-
     ) {}
-
     async getUserByMail(mail: string) {
         return this.userModel.findOne(
           { mail },
@@ -24,9 +21,6 @@ async hashPassword(password: string) :Promise<string> {
 }
 async decodePassword(user: User, password: string) :Promise<boolean> {
     let match=false;
- 
-    
-    console.log(user)
     match=user&& (await bcrypt.compare(password, user.password));
     return match;
 }
@@ -45,11 +39,8 @@ const refreshToken :string=this.jwtService.sign({
 });
 return { accessToken, refreshToken };
 }
-
 async createUser(mail: string, password: string, userName: string, avatar: string) {
     const user = new this.userModel({ mail, password, userName, avatar });
     return user.save();
-
 }
-
 }
