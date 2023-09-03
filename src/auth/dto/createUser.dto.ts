@@ -14,9 +14,6 @@ export class CreateUserDto {
   @IsNotEmpty()
   @IsString()
   readonly userName: string;
-  @ApiProperty()
-  @IsOptional()
-  @IsString()
-  readonly avatar: string;
+
 
 }

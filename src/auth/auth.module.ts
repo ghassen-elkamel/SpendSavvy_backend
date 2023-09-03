@@ -8,6 +8,7 @@ import { PassportModule } from '@nestjs/passport';
 import { AuthProvider } from './auth.provider';
 import { RefreshStrategy } from 'src/common/strategy/refresh.strategy';
 import { DatabaseModule } from 'src/common/database/database.module';
+import { CommonServicesModule } from 'src/common/common-services/common-services.module';
 
 @Module({
   controllers: [AuthController],
@@ -20,6 +21,7 @@ import { DatabaseModule } from 'src/common/database/database.module';
 
     }),
     DatabaseModule,
+    CommonServicesModule
   ],
   exports: [AuthService],
 })
