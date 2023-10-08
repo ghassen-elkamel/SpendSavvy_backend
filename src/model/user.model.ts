@@ -2,6 +2,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { Document, Model } from 'mongoose';
 export type DocumentType<T> = T & Document;
 
+
 export type ModelType<T> = Model<DocumentType<T>>;
 
 export type UserDocument = DocumentType<User>;
