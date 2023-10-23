@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+# SpendSavvy_backend
+=======
+<<<<<<< HEAD
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
@@ -75,3 +78,4 @@ Nest is [MIT licensed](LICENSE).
 =======
 # SpendSavvy_backend
 >>>>>>> 5bbf0cbf4f1530c89b824d491778488732746666
+>>>>>>> d5de7dacf7526d0b3361ef9ce0229e2e3e6c2344
